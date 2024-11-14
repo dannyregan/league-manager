@@ -12,7 +12,9 @@ server.set("view engine", "ejs");
 // Add middlewares to respond on the root path. Pass in the path to be served and a function to handle that path. The function takes req and res. Req can be used to read info about incoming requests (what IP did it come from, what are the headers that came with it, what is it asking for?). Res used to send info back to the client making the request.
 // Render content using ejs
 server.use("/", (req, res) => {
-    res.render("index");
+    res.render("index", {
+        content: "<strong>Hey Addey</strong>"
+    });
 });
 
 
