@@ -1,4 +1,8 @@
 import express from "express";
+import os from "node:os";
+
+import config from "./config";
+
 
 // This is the API from "express" used to create a server object.
 const server = express()
@@ -13,13 +17,15 @@ server.set("view engine", "ejs");
 // Render content using ejs
 server.use("/", (req, res) => {
     res.render("index", {
-        content: "<strong>Hey Addey</strong>"
+        content: "<strong>Good morning, Maggie!</strong>"
     });
 });
 
 
 // The .listen() method of express() is passed the port on which the server will be listening, IP for the server, and a function that will be executed when the server is done mounting itself on that port.
-server.listen("8080", "0.0.0.0", () => {
+server.listen(config.PORT, config.HOST, () => {
     console.info(
-    "Express server is listening at http://0.0.0.0:8080");
+        `Express server is listening at ${config.SERVER_URL}`,
+        `Free Mem: ${os.freemem() / 1024 / 1024}`,
+    );
 });
