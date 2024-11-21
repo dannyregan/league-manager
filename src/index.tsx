@@ -1,10 +1,10 @@
-import { createRoot } from "react-dom/client" // creates the container in which react is going to mount itself in the front end
+import { createRoot } from "react-dom/client";
 
 const App = () => {
-    return <div>Hello React</div>;
-}
+    return <div>Still here?</div>
+};
 
-const container = document.getElementById("app") // We use react to avoid calling the DOM API directly, but we need to use this as an entry point for React.
+const container = document.getElementById("app");
 const root = createRoot(container)
 
 root.render(<App />)
