@@ -1,0 +1,17 @@
+[{
+    "_id": "teamUSA",
+    "id": "USA",
+    "teamName": "USA",
+    "players": [
+        { "_id": "playerDanny", "playerName": "Danny" },
+        { "_id": "playerAlfie", "playerName": "Alfie" }
+    ]
+},{
+    "_id": "teamSpain",
+    "id": "Spain",
+    "teamName": "Spain",
+    "players": [
+        { "_id": "playerCurro", "playerName": "Curro" },
+        { "_id": "playerJavier", "playerName": "Javier" }
+    ]
+}]

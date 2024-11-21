@@ -2,6 +2,7 @@ import express from "express";
 import os from "node:os";
 
 import config from "./config";
+import apiRouter from "./api-router"
 
 
 // This is the API from "express" used to create a server object.
@@ -13,9 +14,12 @@ server.use(express.static("dist"));
 // Use ejs as the projects templating library.
 server.set("view engine", "ejs");
 
+// Mounting all of our routes on /api.
+server.use("/api", apiRouter)
+
 // Add middlewares to respond on the root path. Pass in the path to be served and a function to handle that path. The function takes req and res. Req can be used to read info about incoming requests (what IP did it come from, what are the headers that came with it, what is it asking for?). Res used to send info back to the client making the request.
 // Render content using ejs
-server.use("/", (req, res) => {
+server.get("/", (req, res) => {
     res.render("index", {
         initialContent: "Loading..."
     });
