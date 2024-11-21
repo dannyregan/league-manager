@@ -17,7 +17,7 @@ server.set("view engine", "ejs");
 // Render content using ejs
 server.use("/", (req, res) => {
     res.render("index", {
-        content: "<strong>Good morning, Maggie!</strong>"
+        initialContent: "Loading...",
     });
 });
 
