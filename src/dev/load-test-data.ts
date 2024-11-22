@@ -3,24 +3,36 @@ import { connectClient, stopClient } from "../server/db";
 async function main() {
     const client = await connectClient();
 
-    await client.collection("contests").deleteMany({});
+    await client.collection("teams").deleteMany({});
 
-    const resp = await client.collection("contests").insertMany([
+    const resp = await client.collection("teams").insertMany([
         {
-            _id: "001",
-            name: "USA",
+            _id: "teamUSA",
+            id: "UK + USA",
+            teamName: "UK + USA",
+            rank: 1,
+            wins: 3,
+            losses: 0,
+            points: 9,
             players: [
-                { _id: "011", name: "Danny" },
-                { _id: "012", name: "Alfie" }
-            ],
+                { _id: "playerDanny", playerName: "Danny", goals: 0 },
+                { _id: "playerAlfie", playerName: "Alfie", goals: 0 },
+                { _id: "playerTiago", playerName: "Tiago", goals: 10 }
+            ]
         },
         {
-            _id: "002",
-            name: "Spain",
+            _id: "teamSpain",
+            id: "Spain",
+            teamName: "Spain",
+            rank: 2,
+            wins: 2,
+            losses: 1,
+            points: 7,
             players: [
-                { _id: "013", name: "Curro" },
-                { _id: "014", name: "Javier" }
-            ],
+                { _id: "playerJuan", playerName: "Juan", goals: 0 },
+                { _id: "playerPepe", playerName: "Pepe", goals: 2 },
+                { _id: "playerJoseMaría", playerName: "Jose María", goals: 6 }
+            ]
         }
     ]);
 
