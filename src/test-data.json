@@ -1,25 +1,27 @@
 [{
     "_id": "teamUSA",
-    "id": "USA",
-    "teamName": "USA",
-    "rank": "1",
-    "wins": "3",
-    "losses": "0",
-    "points": "9",
+    "id": "UK + USA",
+    "teamName": "UK + USA",
+    "rank": 1,
+    "wins": 3,
+    "losses": 0,
+    "points": 9,
     "players": [
-        { "_id": "playerDanny", "playerName": "Danny" },
-        { "_id": "playerAlfie", "playerName": "Alfie" }
+        { "_id": "playerDanny", "playerName": "Danny", "goals": 0 },
+        { "_id": "playerAlfie", "playerName": "Alfie", "goals": 1 },
+        { "_id": "playerTiago", "playerName": "Tiago", "goals": 10 }
     ]
 },{
     "_id": "teamSpain",
     "id": "Spain",
     "teamName": "Spain",
-    "rank": "02",
-    "wins": "2",
-    "losses": "1",
-    "points": "7",
+    "rank": 2,
+    "wins": 2,
+    "losses": 1,
+    "points": 7,
     "players": [
-        { "_id": "playerCurro", "playerName": "Curro" },
-        { "_id": "playerJavier", "playerName": "Javier" }
+        { "_id": "playerJuan", "playerName": "Juan", "goals": 0 },
+        { "_id": "playerPepe", "playerName": "Pepe", "goals": 2 },
+        { "_id": "playerJoseMaría", "playerName": "Jose María", "goals": 6 }
     ]
 }]

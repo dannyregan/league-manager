@@ -11,15 +11,36 @@ body {
     text-align: center;
 }
 
-.contest-list {
+.team-list {
     display: flex;
     flex-flow: column wrap;
 }
 
-.teamName {
-    padding: 10px 30px;
+.teamInfo {
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 40vw;
+}
+
+.team-preview {
+    padding: 5px
 }
 
 .players {
     padding-left: 60px;
+    width: 25vw;
+}
+
+.tableHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3px;
+    border-bottom: 1px solid black;
+}
+
+.player {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
 }

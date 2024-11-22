@@ -6,8 +6,8 @@ router.use(cors());
 
 import testData from "../test-data.json"
 
-router.get("/contests", (req, res) => {
-    res.send({ contests: testData });
+router.get("/teams", (req, res) => {
+    res.send({ teams: testData });
 });
 
 export default router

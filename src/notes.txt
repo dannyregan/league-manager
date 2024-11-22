@@ -6,6 +6,9 @@ git checkout -b feature/new-feature
 git add .
 git commit -m "Your commit message"
 
+# This will push the branch to the remote repository. It makes it visible on GitHub without affecting the main branch.
+git push origin feature/your-branch-name
+
 # Step 3: Switch back to main
 git checkout main
 
