@@ -2,6 +2,10 @@
     "_id": "teamUSA",
     "id": "USA",
     "teamName": "USA",
+    "rank": "1",
+    "wins": "3",
+    "losses": "0",
+    "points": "9",
     "players": [
         { "_id": "playerDanny", "playerName": "Danny" },
         { "_id": "playerAlfie", "playerName": "Alfie" }
@@ -10,6 +14,10 @@
     "_id": "teamSpain",
     "id": "Spain",
     "teamName": "Spain",
+    "rank": "02",
+    "wins": "2",
+    "losses": "1",
+    "points": "7",
     "players": [
         { "_id": "playerCurro", "playerName": "Curro" },
         { "_id": "playerJavier", "playerName": "Javier" }

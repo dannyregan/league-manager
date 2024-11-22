@@ -1,3 +1,26 @@
+GitHub Work Flow
+# Step 1: Create and switch to a feature branch
+git checkout -b feature/new-feature
+
+# Step 2: Stage and commit your work
+git add .
+git commit -m "Your commit message"
+
+# Step 3: Switch back to main
+git checkout main
+
+# Step 4: Merge the feature branch into main
+git merge feature/new-feature
+
+# Step 5: Push changes to remote
+git push origin main
+
+# Step 6: Delete the feature branch (optional)
+git branch -d feature/new-feature
+
+
+
+
 const App = () => {
     const [counter, setCounter] = useState(0)
     

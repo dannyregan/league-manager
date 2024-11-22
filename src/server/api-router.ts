@@ -10,6 +10,4 @@ router.get("/contests", (req, res) => {
     res.send({ contests: testData });
 });
 
-// router.get("/contest")
-
 export default router
