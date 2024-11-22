@@ -1,3 +1,7 @@
+* {
+    background-color: rgb(255, 118, 221);
+}
+
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -43,4 +47,17 @@ body {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid grey;
+}
+
+table {
+    text-align: center;
+}
+
+.teamName {
+    text-align: left;
+}
+
+.leaguePoints {
+    font-size: 24px;
+    font-weight: bold;
 }
