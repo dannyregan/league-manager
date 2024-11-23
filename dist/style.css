@@ -8,11 +8,19 @@ body {
 
 .container {
     display: flex;
-    flex-flow: column wrap
+    flex-flow: column wrap;
+    align-items: center;
 }
 
 .header {
     text-align: center;
+    margin: 50px 5px 5px 5px;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: larger;
+    color: beige;
+    font-weight: bold;
+    background-color: blueviolet;
 }
 
 .team-list {
@@ -51,10 +59,23 @@ body {
 
 table {
     text-align: center;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid rgb(113, 7, 103);
+}
+
+.teamRank {
+    width: 45px;
+    padding: 12px;
+
 }
 
 .teamName {
     text-align: left;
+    padding-right: 20px
 }
 
 .team-header {

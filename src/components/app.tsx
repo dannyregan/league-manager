@@ -1,6 +1,7 @@
 import { ClassificationTypeNames } from 'typescript';
 import Header from './header'
 import TeamTable from "./team-table"
+import ScorersTable from './scorers-table';
 import { MongoTailableCursorError } from 'mongodb';
 
 const App = ({ initialData }) => {
@@ -10,6 +11,7 @@ const App = ({ initialData }) => {
             {/* <TeamTable teamsData={ initialData }/> */}
             <TeamTable teamsData={initialData}/>
             <Header message="Top Scorers" />
+            <ScorersTable teamsData={initialData} />
         </div>
     );
 };
