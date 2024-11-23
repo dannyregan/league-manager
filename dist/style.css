@@ -57,6 +57,10 @@ table {
     text-align: left;
 }
 
+.team-header {
+    text-align: left;
+}
+
 .leaguePoints {
     font-size: 24px;
     font-weight: bold;
