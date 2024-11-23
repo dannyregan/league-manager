@@ -1,13 +1,19 @@
 import express from "express"
 import cors from "cors";
 
+import { connectClient } from "./db";
+
 const router = express.Router();
 router.use(cors());
 
-import testData from "../test-data.json"
+router.get("/teams", async (req, res) => {
+    const client = await connectClient();
 
-router.get("/teams", (req, res) => {
-    res.send({ teams: testData });
+    const teams = await client.collection("teams")
+        .find()
+        .toArray();
+
+    res.send({ teams });
 });
 
 export default router

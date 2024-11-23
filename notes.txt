@@ -22,6 +22,8 @@ git push origin main
 git branch -d feature/new-feature
 
 
+TO SEND TEST DATA TO MONGODB COMPASS
+npx tsnd src/dev/load-test-data.ts
 
 
 const App = () => {
