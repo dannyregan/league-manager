@@ -1,14 +1,8 @@
 import Table from './table';
 
 const TeamTable = ({ teamsData, onTeamClick}) => {
-
-    // // Navigate to the individual team view.
-    // const handleClick = (event) => {
-    //     event.preventDefault();
-    //     onClick(teamsData.teams);
-    // }
-
     const headers = ["Rank", "Team", "W", "L", "D", "P%", "PF", "PA", "LP"];
+    
     const renderRow = (team, handleClick) => (
         <>
         

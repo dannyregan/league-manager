@@ -10,7 +10,7 @@ const LeagueStandings = ({ initialData, onTeamClick }) => {
             <Header message="League Standings"/>
             <TeamTable teamsData={ initialData } onTeamClick={onTeamClick}/>
             <Header message="Top Scorers" />
-            <ScorersTable teamsData={initialData} />
+            <ScorersTable teamsData={initialData} onTeamClick={onTeamClick}/>
         </>
     );
 };

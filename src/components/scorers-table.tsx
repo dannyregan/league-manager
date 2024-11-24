@@ -1,6 +1,6 @@
 import Table from './table';
 
-const ScorersTable = ({ teamsData }) => {
+const ScorersTable = ({ teamsData, onTeamClick }) => {
     const headers = ["Rank", "Team", "Name", "Goals"];
 
     const playerRows = teamsData.teams.flatMap((team) =>
@@ -14,16 +14,16 @@ const ScorersTable = ({ teamsData }) => {
 
     const sortedPlayerRows = playerRows.sort((a, b) => a.rank - b.rank);
 
-    const renderRow = (row) => (
+    const renderRow = (player, handleClick) => (
         <>
-            <th scope="row" className="teamRank">{row.rank}</th>
-            <td className="teamName">{row.teamName}</td>
-            <td>{row.playerName}</td>
-            <td>{row.goals}</td>
+            <th scope="row" className="teamRank">{player.rank}</th>
+            <td className="teamName" onClick={(e) => handleClick(e, player.teamName)}>{player.teamName}</td>
+            <td>{player.playerName}</td>
+            <td>{player.goals}</td>
         </>
     );
 
-    return <Table headers={headers} rows={playerRows} renderRow={renderRow} />;
+    return <Table headers={headers} rows={sortedPlayerRows} renderRow={renderRow} onClick={onTeamClick} />;
 }
 
 export default ScorersTable;
