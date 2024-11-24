@@ -16,4 +16,9 @@ router.get("/teams", async (req, res) => {
     res.send({ teams });
 });
 
+router.get("/teams/:teamId", (req, res) => {
+    console.log(req.params.teamId);
+
+});
+
 export default router
