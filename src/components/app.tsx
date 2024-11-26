@@ -1,19 +1,18 @@
-// import { ClassificationTypeNames } from 'typescript';
 import { useState } from "react"
 
 import LeagueStandings from './league-standings';
 import Header from './header'
-// import TeamTable from "./team-table"
-// import ScorersTable from './scorers-table';
-// import { MongoTailableCursorError } from 'mongodb';
+import TeamInfo from "./team-info";
 
 const App = ({ initialData }) => {
 
     const [page, setPage] = useState("league-standings");
+    const [currentTeam, setCurrentTeam] = useState({});
 
     const navigateToTeam = (teamID) => {
         setPage("team")
-        console.log(teamID)
+        console.log("setting current teamID", teamID)
+        setCurrentTeam(teamID)
     }
 
     const pageContent = () => {
@@ -21,7 +20,7 @@ const App = ({ initialData }) => {
             case "league-standings":
                 return <LeagueStandings initialData={initialData} onTeamClick={navigateToTeam}/>
             case "team":
-                return "..."
+                return <TeamInfo id={currentTeam}/>
                 
         }
     }
