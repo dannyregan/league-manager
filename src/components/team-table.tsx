@@ -9,6 +9,8 @@ const TeamTable = ({ teamsData, onTeamClick }) => {
             processedTeam = team[0];
         }
 
+        console.log("ProcessedTeam", processedTeam)
+
         return (
         <>
         
@@ -24,6 +26,7 @@ const TeamTable = ({ teamsData, onTeamClick }) => {
         </>
     )};
 
+    console.log(teamsData)
     const data = Array.isArray(teamsData.teams) ? teamsData.teams : [teamsData]
 
     return <Table headers={headers} rows={data} renderRow={renderRow} onClick={onTeamClick} />;

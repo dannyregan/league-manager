@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { fetchTeam } from "../server/api-client";
 import Header from "./header";
 import TeamTable from "./team-table";
+import PlayersTable from "./players-table";
 
 const TeamInfo = ({ id, onTeamClick } ) => {
     const [team, setTeam] = useState(null);
@@ -22,6 +23,8 @@ const TeamInfo = ({ id, onTeamClick } ) => {
         <>
             <Header message={team.teamName} />
             <TeamTable teamsData={team} onTeamClick={onTeamClick} />
+            <Header message="Roster" />
+            <PlayersTable playersData={team.players} onTeamClick={onTeamClick} />
         </>
     )
 };
