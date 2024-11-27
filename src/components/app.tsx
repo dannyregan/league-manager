@@ -11,7 +11,6 @@ const App = ({ initialData }) => {
 
     const navigateToTeam = (teamID) => {
         setPage("team")
-        console.log("setting current teamID", teamID)
         setCurrentTeam(teamID)
     }
 
@@ -20,7 +19,7 @@ const App = ({ initialData }) => {
             case "league-standings":
                 return <LeagueStandings initialData={initialData} onTeamClick={navigateToTeam}/>
             case "team":
-                return <TeamInfo id={currentTeam}/>
+                return <TeamInfo id={currentTeam} onTeamClick={navigateToTeam}/>
                 
         }
     }

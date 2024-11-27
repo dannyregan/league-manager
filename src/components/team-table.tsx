@@ -1,24 +1,32 @@
 import Table from './table';
 
-const TeamTable = ({ teamsData, onTeamClick}) => {
+const TeamTable = ({ teamsData, onTeamClick }) => {
     const headers = ["Rank", "Team", "W", "L", "D", "P%", "PF", "PA", "LP"];
     
-    const renderRow = (team, handleClick) => (
+    const renderRow = (team, handleClick) => {
+        let processedTeam = team;
+        if (team.length === 1) {
+            processedTeam = team[0];
+        }
+
+        return (
         <>
         
-            <th scope="row" className="teamRank">{team.rank}</th>
-            <td className="teamName" onClick={(e) => handleClick(e, team.id)}>{team.teamName}</td>
-            <td>{team.wins}</td>
-            <td>{team.draws}</td>
-            <td>{team.losses}</td>
-            <td>{team.percent}%</td>
-            <td>{team.pointsFor}</td>
-            <td>{team.pointsAgainst}</td>
-            <td className="leaguePoints">{team.leaguePoints}</td>
+            <th scope="row" className="teamRank">{processedTeam.rank}</th>
+            <td className="teamName" onClick={(e) => handleClick(e, processedTeam.id)}>{processedTeam.teamName}</td>
+            <td>{processedTeam.wins}</td>
+            <td>{processedTeam.losses}</td>
+            <td>{processedTeam.draws}</td>
+            <td>{processedTeam.percent}%</td>
+            <td>{processedTeam.pointsFor}</td>
+            <td>{processedTeam.pointsAgainst}</td>
+            <td className="leaguePoints">{processedTeam.leaguePoints}</td>
         </>
-    );
+    )};
 
-    return <Table headers={headers} rows={teamsData.teams} renderRow={renderRow} onClick={onTeamClick} />;
+    const data = Array.isArray(teamsData.teams) ? teamsData.teams : [teamsData]
+
+    return <Table headers={headers} rows={data} renderRow={renderRow} onClick={onTeamClick} />;
 }
 
 export default TeamTable;

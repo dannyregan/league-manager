@@ -8,9 +8,9 @@ const LeagueStandings = ({ initialData, onTeamClick }) => {
     return (
         <>
             <Header message="League Standings"/>
-            <TeamTable teamsData={ initialData } onTeamClick={onTeamClick}/>
+            <TeamTable teamsData={ initialData } onTeamClick={onTeamClick} />
             <Header message="Top Scorers" />
-            <ScorersTable teamsData={initialData} onTeamClick={onTeamClick}/>
+            <ScorersTable teamsData={initialData} onTeamClick={onTeamClick} />
         </>
     );
 };

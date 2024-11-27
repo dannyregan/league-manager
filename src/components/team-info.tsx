@@ -1,18 +1,27 @@
 import { useEffect, useState } from "react"
 
 import { fetchTeam } from "../server/api-client";
+import Header from "./header";
+import TeamTable from "./team-table";
 
-const TeamInfo = ({ id }) => {
-    const [team, setTeam] = useState({});
+const TeamInfo = ({ id, onTeamClick } ) => {
+    const [team, setTeam] = useState(null);
 
     useEffect(() => {
-        fetchTeam(id).then((team) => {
-            setTeam(team)
+        fetchTeam(id).then((teamData) => {
+            console.log("fetched team data:", teamData)
+            setTeam(teamData)
         })
-    })
+    }, [id])
+    
+    if (!team) {
+        return <p>Loading team data...</p>
+    }
+
     return (
         <>
-            {team.rank}
+            <Header message={team.teamName} />
+            <TeamTable teamsData={team} onTeamClick={onTeamClick} />
         </>
     )
 };

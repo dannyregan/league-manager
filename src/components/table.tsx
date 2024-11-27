@@ -1,11 +1,11 @@
-const Table = ({ headers, rows, renderRow, onClick}) => {
+const Table = ({ headers, rows, renderRow, onClick }) => {
 
-        // Navigate to the individual team view.
-        const handleClick = (event, id) => {
-            event.preventDefault();
-            onClick(id);
-        }
-
+    // Navigate to the individual team view.
+    const handleClick = (event, id) => {
+        event.preventDefault();
+        onClick(id);
+    }
+    
     return (
         <table>
             <thead>
