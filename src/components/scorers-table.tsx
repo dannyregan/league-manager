@@ -12,8 +12,6 @@ const ScorersTable = ({ teamsData, onTeamClick }) => {
         }))
     );
 
-    const sortedPlayerRows = playerRows.sort((a, b) => a.rank - b.rank);
-
     const renderRow = (player, handleClick) => (
         <>
             <th scope="row" className="teamRank">{player.rank}</th>
@@ -23,7 +21,16 @@ const ScorersTable = ({ teamsData, onTeamClick }) => {
         </>
     );
 
-    return <Table headers={headers} rows={sortedPlayerRows} renderRow={renderRow} onClick={onTeamClick} />;
+    // Only displays players who have scored a goal in the Top Scorers table.
+    const sortedPlayerRows = playerRows.sort((a, b) => a.rank - b.rank);
+    let scoringPlayers = []
+
+    for (let i=0; i < sortedPlayerRows.length; i++) {
+        if (sortedPlayerRows[i].goals > 0)
+            scoringPlayers.push(sortedPlayerRows[i])
+    }
+
+    return <Table headers={headers} rows={scoringPlayers} renderRow={renderRow} onClick={onTeamClick} />;
 }
 
 export default ScorersTable;
