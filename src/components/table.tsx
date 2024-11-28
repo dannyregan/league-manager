@@ -8,7 +8,7 @@ const Table = ({ headers, rows, renderRow, onClick }) => {
     
     return (
         <table>
-            <thead>
+            <thead id={'table-headers'}>
                 <tr>
                     {headers.map((header, index) => (
                         <th 
