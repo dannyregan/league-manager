@@ -1,10 +1,20 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { fetchTeams } from "../server/api-client"
 
 import Header from "./header"
 import TeamTable from "./team-table"
 import ScorersTable from "./scorers-table"
 
 const LeagueStandings = ({ initialData, onTeamClick }) => {
+    const [teams, setTeams] = useState(initialData)
+
+    useEffect(() => {
+        debugger;
+        fetchTeams().then((data) => {
+            setTeams(data.contest);
+        });
+    }, [])
+
     return (
         <>
             <Header message="League Standings"/>
