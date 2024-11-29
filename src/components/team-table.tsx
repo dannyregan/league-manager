@@ -1,15 +1,24 @@
 import Table from './table';
 
 const TeamTable = ({ teamsData, onTeamClick }) => {
-    const headers = ["Rank", "Team", "W", "L", "D", "P%", "PF", "PA", "LP"];
+    const headers = [
+        { label: "Rank", tooltip: "" },
+        { label: "Team", tooltip: "" },
+        { label: "W", tooltip: "Wins" },
+        { label: "L", tooltip: "Losses" },
+        { label: "D", tooltip: "Draws" },
+        { label: "P%", tooltip: "Winning Percentage" },
+        { label: "PF", tooltip: "Points For" },
+        { label: "PA", tooltip: "Points Against" },
+        { label: "LP", tooltip: "League Points" }
+    ];
+    // const headers = ["Rank", "Team", "W", "L", "D", "P%", "PF", "PA", "LP"];
     
     const renderRow = (team, handleClick) => {
         let processedTeam = team;
         if (team.length === 1) {
             processedTeam = team[0];
         }
-
-        console.log("ProcessedTeam", processedTeam)
 
         return (
         <>

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import LeagueStandings from './league-standings';
 import Header from './header'
@@ -9,9 +9,18 @@ const App = ({ initialData }) => {
     const [page, setPage] = useState("league-standings");
     const [currentTeam, setCurrentTeam] = useState({});
 
+    useEffect(() => {
+        window.onpopstate = (event) => {
+            const newPage = event.state?.teamID ? "team" : "league-standings"
+            setPage(newPage);
+            setCurrentTeam(event.state?.teamID);
+        };
+    }, [])
+
     const navigateToTeam = (teamID) => {
-        setPage("team")
-        setCurrentTeam(teamID)
+        window.history.pushState({teamID}, "", `/team/${teamID}`);
+        setPage("team");
+        setCurrentTeam(teamID);
     }
 
     const pageContent = () => {
@@ -28,6 +37,7 @@ const App = ({ initialData }) => {
         <div className="container">
             <Header message="International League" />
             {pageContent()}
+            <div id="tooltip" className="tooltip"></div>
             {/* <LeagueStandings initialData={initialData} /> */}
             {/* <Header message="League Standings"/>
             <TeamTable teamsData={ initialData }/>

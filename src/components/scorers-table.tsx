@@ -2,7 +2,13 @@ import Table from './table';
 import { hasScored } from './hasScored';
 
 const ScorersTable = ({ teamsData, onTeamClick }) => {
-    const headers = ["Rank", "Team", "Name", "Goals"];
+    const headers = [
+        { label: "Rank", tooltip: "" },
+        { label: "Team", tooltip: "" },
+        { label: "Name", tooltip: "" },
+        { label: "Goals", tooltip: ""}
+    ];
+    // const headers = ["Rank", "Team", "Name", "Goals"];
 
     const playerRows = teamsData.teams.flatMap((team) =>
         team.players.map((player) => ({

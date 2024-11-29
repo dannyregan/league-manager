@@ -2,7 +2,12 @@ import { hasScored } from './hasScored';
 import Table from './table';
 
 const PlayersTable = ({ playersData, onTeamClick }) => {
-    const headers = ["Rank", "Player", "Points Scored"];
+    const headers = [
+        { label: "Rank", tooltip: "" },
+        { label: "Player", tooltip: "" },
+        { label: "Points Scored", tooltip: "" }
+    ];
+    // const headers = ["Rank", "Player", "Points Scored"];
 
     const scoringPlayers = hasScored(playersData)
     
