@@ -1,4 +1,5 @@
 import Table from './table';
+import { hasScored } from './hasScored';
 
 const ScorersTable = ({ teamsData, onTeamClick }) => {
     const headers = ["Rank", "Team", "Name", "Goals"];
@@ -12,6 +13,8 @@ const ScorersTable = ({ teamsData, onTeamClick }) => {
         }))
     );
 
+    const scoringPlayers = hasScored(playerRows)
+
     const renderRow = (player, handleClick) => (
         <>
             <th scope="row" className="teamRank">{player.rank}</th>
@@ -20,15 +23,6 @@ const ScorersTable = ({ teamsData, onTeamClick }) => {
             <td>{player.goals}</td>
         </>
     );
-
-    // Only displays players who have scored a goal in the Top Scorers table.
-    const sortedPlayerRows = playerRows.sort((a, b) => a.rank - b.rank);
-    let scoringPlayers = []
-
-    for (let i=0; i < sortedPlayerRows.length; i++) {
-        if (sortedPlayerRows[i].goals > 0)
-            scoringPlayers.push(sortedPlayerRows[i])
-    }
 
     return <Table headers={headers} rows={scoringPlayers} renderRow={renderRow} onClick={onTeamClick} />;
 }
