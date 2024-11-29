@@ -6,7 +6,7 @@ import { API_SERVER_URL } from "../public-config";
 export const fetchTeams = async () => {
     const res = await axios.get(`${API_SERVER_URL}/teams`)
 
-    return res.data
+    return res.data.teams
 };
 
 export const fetchTeam = async (teamID) => {

@@ -1,14 +1,14 @@
-// import reactDOMServer from "react-dom/server"
-// import { fetchTeams } from "./api-client"
+import reactDOMServer from "react-dom/server"
+import { fetchTeams } from "./api-client"
 
-// import App from "../components/app"
+import App from "../components/app"
 
-// const serverRender = async () => {
-//     const teams = await fetchTeams()
+const serverRender = async () => {
+    const teams = await fetchTeams()
 
-//     const initialMarkup = reactDOMServer.renderToString(<App initialData={ { teams }} />)
+    const initialMarkup = reactDOMServer.renderToString(<App initialData={{ teams }} />)
 
-//     return { initialMarkup }
-// }
+    return { initialMarkup }
+};
 
-// export default serverRender
+export default serverRender;

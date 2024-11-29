@@ -10,8 +10,8 @@ const LeagueStandings = ({ initialData, onTeamClick }) => {
 
     useEffect(() => {
         debugger;
-        fetchTeams().then((data) => {
-            setTeams(data.contest);
+        fetchTeams().then((teams) => {
+            setTeams(teams);
         });
     }, [])
 
