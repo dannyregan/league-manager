@@ -8,7 +8,7 @@ const serverRender = async () => {
 
     const initialMarkup = reactDOMServer.renderToString(<App initialData={{ teams }} />)
 
-    return { initialMarkup }
+    return { initialMarkup, initialData: [teams] }
 };
 
 export default serverRender;

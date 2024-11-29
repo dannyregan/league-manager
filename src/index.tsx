@@ -10,4 +10,5 @@ const root = createRoot(container)
 axios.get(`${API_SERVER_URL}/teams`)
     .then((res) => {
         root.render(<App initialData={ { teams: res.data.teams}} />);
+        // root.render(<App initialData={(window as any).initialData} />);
     })

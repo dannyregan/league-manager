@@ -4,15 +4,15 @@ import { fetchTeams } from "../server/api-client"
 import Header from "./header"
 import TeamTable from "./team-table"
 import ScorersTable from "./scorers-table"
+import { debug } from "webpack"
 
 const LeagueStandings = ({ initialData, onTeamClick }) => {
     const [teams, setTeams] = useState(initialData)
 
     useEffect(() => {
-        debugger;
-        fetchTeams().then((teams) => {
-            setTeams(teams);
-        });
+        // fetchTeams().then((teams) => {
+        //     setTeams(teams);
+        // });
     }, [])
 
     return (
