@@ -7,7 +7,6 @@ const PlayersTable = ({ playersData, onTeamClick }) => {
         { label: "Player", tooltip: "" },
         { label: "Points Scored", tooltip: "" }
     ];
-    // const headers = ["Rank", "Player", "Points Scored"];
 
     const scoringPlayers = hasScored(playersData)
     

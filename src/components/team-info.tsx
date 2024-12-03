@@ -18,7 +18,7 @@ const TeamInfo = ({ id, onTeamClick } ) => {
     if (!team) {
         return <p>Loading team data...</p>
     }
-
+    
     return (
         <>
             <Header message={team.teamName} />

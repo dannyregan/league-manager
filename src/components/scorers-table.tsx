@@ -8,16 +8,15 @@ const ScorersTable = ({ teamsData, onTeamClick }) => {
         { label: "Name", tooltip: "" },
         { label: "Goals", tooltip: ""}
     ];
-    // const headers = ["Rank", "Team", "Name", "Goals"];
 
-    const playerRows = teamsData.teams.flatMap((team) =>
-        team.players.map((player) => ({
+    const playerRows = teamsData?.teams?.flatMap((team) =>
+        team?.players?.map((player) => ({
             rank: player.rank,
             teamName: team.teamName,
             playerName: player.playerName,
             goals: player.goals,
-        }))
-    );
+        })) || []
+    ) || [];
 
     const scoringPlayers = hasScored(playerRows)
 

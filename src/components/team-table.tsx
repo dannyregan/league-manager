@@ -35,7 +35,6 @@ const TeamTable = ({ teamsData, onTeamClick }) => {
         </>
     )};
 
-    console.log(teamsData)
     const data = Array.isArray(teamsData.teams) ? teamsData.teams : [teamsData]
 
     return <Table headers={headers} rows={data} renderRow={renderRow} onClick={onTeamClick} />;
