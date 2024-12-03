@@ -28,17 +28,12 @@ const Table = ({ headers, rows, renderRow, onClick }) => {
                         key={index}
                         className={header.label === "Team" ? "team-header" : ""}
                         data-tooltip={header.tooltip}
-                        // onMouseEnter={header.tooltip !== "" ? (e) => showTooltip(e, header.tooltip) : {}}
-                        onMouseEnter={(e) => showTooltip(e, header.tooltip)}
+                        onMouseEnter={header.tooltip !== "" ? (e) => showTooltip(e, header.tooltip) : null}
                         onMouseLeave={hideTooltip}>
 
                         {header.label}
 
                         </th>
-                        // <th 
-                        //     key={index}
-                        //     scope="col"
-                        //     className={header === "Team" ? "team-header" : ""}>{header}</th>
                     ))}
                 </tr>
             </thead>
