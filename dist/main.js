@@ -146,7 +146,7 @@ eval("\nvar __read = (this && this.__read) || function (o, n) {\n    var m = typ
   \*********************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar jsx_runtime_1 = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\nvar Menu = function (_a) {\n    var leagueName = _a.leagueName;\n    return ((0, jsx_runtime_1.jsxs)(\"div\", { className: \"menu\", children: [(0, jsx_runtime_1.jsx)(\"h1\", { children: leagueName }), (0, jsx_runtime_1.jsx)(\"a\", { href: \"/\", children: \"League Standings \" })] }));\n};\nexports[\"default\"] = Menu;\n\n\n//# sourceURL=webpack://league-manager/./src/components/menu.tsx?");
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar jsx_runtime_1 = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\nvar Menu = function (_a) {\n    var leagueName = _a.leagueName;\n    return ((0, jsx_runtime_1.jsxs)(\"div\", { className: \"menu\", children: [(0, jsx_runtime_1.jsx)(\"h1\", { children: leagueName }), (0, jsx_runtime_1.jsx)(\"a\", { className: \"menuButton\", href: \"/\", children: \"League Standings \" })] }));\n};\nexports[\"default\"] = Menu;\n\n\n//# sourceURL=webpack://league-manager/./src/components/menu.tsx?");
 
 /***/ }),
 

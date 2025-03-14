@@ -2,7 +2,7 @@ const Menu = ({ leagueName }) => {
     return (
         <div className="menu">
             <h1>{leagueName}</h1>
-            <a href="/">League Standings </a>
+            <a className="menuButton"href="/">League Standings </a>
         </div>
     )
 };
