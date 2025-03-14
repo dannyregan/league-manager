@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import LeagueStandings from './league-standings';
 import Header from './header'
 import TeamInfo from "./team-info";
+import Menu from "./menu";
 
 const isBrowser = typeof window !== "undefined";
 
@@ -43,7 +44,7 @@ const App = ({ initialData }) => {
 
     return (
         <div className="container">
-            <Header message="International League" />
+            <Menu leagueName="International League"/>
             {pageContent()}
             <div id="tooltip" className="tooltip"></div>
         </div>
