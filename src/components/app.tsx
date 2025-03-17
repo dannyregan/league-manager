@@ -41,7 +41,7 @@ const App = ({ initialData }) => {
             case "team":
                 return <TeamInfo id={currentTeam} onTeamClick={navigateToTeam}/>
             case "new-team":
-                return <NewTeam />
+                return <NewTeam onNewTeamSubmit={handleNewTeamSubmit}/>
         }
     };
 
@@ -52,6 +52,12 @@ const App = ({ initialData }) => {
         }
         setPage(newPage);
     };
+
+    const handleNewTeamSubmit = (event) => {
+        event.preventDefault()
+        const newTeamName = event.target.newTeam
+        console.log(newTeamName.value)
+    }
 
     return (
         <div className="container">
