@@ -4,6 +4,7 @@ import LeagueStandings from './league-standings';
 import Header from './header'
 import TeamInfo from "./team-info";
 import Menu from "./menu";
+import NewTeam from "./addTeam";
 
 const isBrowser = typeof window !== "undefined";
 
@@ -39,12 +40,22 @@ const App = ({ initialData }) => {
                 return <LeagueStandings initialData={initialData} onTeamClick={navigateToTeam}/>
             case "team":
                 return <TeamInfo id={currentTeam} onTeamClick={navigateToTeam}/>
+            case "new-team":
+                return <NewTeam />
         }
+    };
+
+    const handleNavigate = (newPage) => {
+        if (isBrowser) {
+            const newURL = newPage === "league-standings" ? "/" : `/${newPage}`;
+            window.history.pushState({}, "", newURL);
+        }
+        setPage(newPage);
     };
 
     return (
         <div className="container">
-            <Menu leagueName="International League"/>
+            <Menu leagueName="International League" onNavigate={handleNavigate} />
             {pageContent()}
             <div id="tooltip" className="tooltip"></div>
         </div>

@@ -1,8 +1,13 @@
-const Menu = ({ leagueName }) => {
+const Menu = ({ leagueName, onNavigate }) => {
     return (
         <div className="menu">
-            <h1>{leagueName}</h1>
-            <a className="menuButton"href="/">League Standings </a>
+            <div>
+                <h1>{leagueName}</h1>
+            </div>
+            <div>
+                <button className="menuButton" onClick={() => onNavigate("new-team")}>+ New Team</button>
+                <button className="menuButton" onClick={() => onNavigate("league-standings")}>League Standings</button>
+            </div>
         </div>
     )
 };
